@@ -27,6 +27,14 @@ cp -r skills/<skill-name> ~/.claude/skills/
 - **输出**：7 条可直接发布的文案（标题 + 正文 + 标签 + 封面文字）
 - **触发**：`/photo-copywriter` 或说「给照片配文案」
 
+### lark-inspiration-capture — 灵感入库
+
+将用户提供的内容（本地 Markdown 文件、飞书文档链接、或直接粘贴的文字）智能总结提炼后，自动上传至飞书「个人成长灵感库」Base。
+
+- **输入**：本地 `.md` 文件、飞书文档/视频链接、或直接粘贴的文字
+- **输出**：标题、原始内容、结构化解读、行动启发、标签分类等 11 个字段，写入飞书多维表格
+- **触发**：`/lark-inspiration-capture` 或说「把这个内容入库」「保存到灵感库」
+
 ### douyin-viral-analyzer — 爆款文案拆解器
 
 输入一份 markdown 文案，自动按 7 大维度 33 个字段深度拆解，同步至飞书多维表格。
@@ -42,6 +50,8 @@ creator-toolkit/
 ├── README.md
 └── skills/
     ├── photo-copywriter/
+    │   └── SKILL.md
+    ├── lark-inspiration-capture/
     │   └── SKILL.md
     └── douyin-viral-analyzer/
         └── SKILL.md
