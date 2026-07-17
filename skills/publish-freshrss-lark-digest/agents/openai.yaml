@@ -1,0 +1,4 @@
+interface:
+  display_name: "FreshRSS 飞书日报"
+  short_description: "抓取 FreshRSS 近24小时资讯，生成日报并写入飞书多维表格"
+  default_prompt: "使用 $publish-freshrss-lark-digest 抓取 FreshRSS 最近24小时资讯并发布为飞书日报。"

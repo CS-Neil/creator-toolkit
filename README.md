@@ -57,6 +57,16 @@ cp -r skills/<skill-name> ~/.claude/skills/
 - **触发**：`/deep-read` 或说「读书」「阅读」「深度阅读」「想读《XXX》」
 - **适用**：非虚构类（商业、社科、心理、科普等）
 
+### publish-freshrss-lark-digest — FreshRSS 飞书日报
+
+抓取 FreshRSS 最近 24 小时消息，为公众号文章补取全文，逐条概况公众号与 X 内容，并发布为一篇飞书日报和相互关联的多维表格记录。
+
+- **输入**：FreshRSS SQLite、WeWe RSS 服务和飞书 Base 运行时配置
+- **输出**：飞书日报文档、日报主记录、逐条资讯明细及上传校验结果
+- **能力**：精确 24 小时窗口、公众号全文补抓、分类概况、外部 ID 去重、批量写入、数量与关联校验
+- **触发**：`/publish-freshrss-lark-digest` 或说「把 FreshRSS 最近24小时消息生成飞书日报」
+- **安全**：不在 Skill 中保存服务器密码、X Token、Cookie 或飞书凭据
+
 ## 目录结构
 
 ```
@@ -69,11 +79,18 @@ creator-toolkit/
     │   └── SKILL.md
     ├── douyin-viral-analyzer/
     │   └── SKILL.md
-    └── deep-read/
-        └── SKILL.md
+    ├── deep-read/
+    │   └── SKILL.md
+    └── publish-freshrss-lark-digest/
+        ├── SKILL.md
+        ├── agents/
+        ├── references/
+        └── scripts/
 ```
 
 ## 依赖
 
 - [Claude Code](https://claude.ai/code)
-- `lark-cli`（飞书多维表格写入）
+- `lark-cli`（飞书文档和多维表格写入）
+- FreshRSS SQLite 数据库
+- WeWe RSS（公众号全文补抓）
